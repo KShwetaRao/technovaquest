@@ -43,4 +43,8 @@ This project is built with:
 - Tailwind CSS
 
 
+## What technologies are used for this project?
+
+This project is built with:
+...
 # technovaquest
