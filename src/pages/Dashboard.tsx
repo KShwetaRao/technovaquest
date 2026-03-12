@@ -68,6 +68,7 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold mb-6">Active Quests</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <QuestCard
+              id="build-rest-api"
               title="Build a REST API"
               category="Web Development"
               difficulty="Intermediate"
@@ -76,6 +77,7 @@ const Dashboard = () => {
               description="Create a RESTful API using Node.js and Express with authentication and CRUD operations."
             />
             <QuestCard
+              id="sql-mastery-challenge"
               title="SQL Mastery Challenge"
               category="Database"
               difficulty="Beginner"
@@ -84,6 +86,7 @@ const Dashboard = () => {
               description="Master essential SQL queries including joins, aggregations, and subqueries."
             />
             <QuestCard
+              id="machine-learning-101"
               title="Machine Learning 101"
               category="AI"
               difficulty="Advanced"
@@ -99,6 +102,7 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold mb-6">Recommended for You</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <QuestCard
+              id="react-hooks-deep-dive"
               title="React Hooks Deep Dive"
               category="Frontend"
               difficulty="Intermediate"
@@ -107,6 +111,7 @@ const Dashboard = () => {
               description="Master useState, useEffect, and custom hooks to build powerful React applications."
             />
             <QuestCard
+              id="cybersecurity-basics"
               title="Cybersecurity Basics"
               category="Security"
               difficulty="Beginner"
@@ -115,6 +120,7 @@ const Dashboard = () => {
               description="Learn fundamental security principles and protect your applications from common attacks."
             />
             <QuestCard
+              id="docker-containerization"
               title="Docker Containerization"
               category="DevOps"
               difficulty="Intermediate"

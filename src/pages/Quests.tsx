@@ -1,6 +1,6 @@
 
 import Navigation from "@/components/Navigation";
-import QuestCard from "@/components/Questcard";
+import QuestCard from "@/components/QuestCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
@@ -11,6 +11,7 @@ const Quests = () => {
 
   const allQuests = [
     {
+      id: "build-rest-api",
       title: "Build a REST API",
       category: "Backend",
       difficulty: "Intermediate" as const,
@@ -19,6 +20,7 @@ const Quests = () => {
       description: "Create a RESTful API using Node.js and Express with authentication and CRUD operations.",
     },
     {
+      id: "css-grid-mastery",
       title: "CSS Grid Mastery",
       category: "Frontend",
       difficulty: "Beginner" as const,
@@ -27,6 +29,7 @@ const Quests = () => {
       description: "Master CSS Grid by building a responsive dashboard layout from scratch.",
     },
     {
+      id: "secure-web-app",
       title: "Secure a Web App",
       category: "Cybersecurity",
       difficulty: "Advanced" as const,
@@ -35,6 +38,7 @@ const Quests = () => {
       description: "Implement security best practices including XSS protection, CSRF tokens, and SQL injection prevention.",
     },
     {
+      id: "train-neural-network",
       title: "Train a Neural Network",
       category: "AI/ML",
       difficulty: "Advanced" as const,
@@ -43,6 +47,7 @@ const Quests = () => {
       description: "Build and train a neural network for image classification using TensorFlow or PyTorch.",
     },
     {
+      id: "react-hooks-deep-dive",
       title: "React Hooks Deep Dive",
       category: "Frontend",
       difficulty: "Intermediate" as const,
@@ -51,6 +56,7 @@ const Quests = () => {
       description: "Master useState, useEffect, useContext, and custom hooks through practical examples.",
     },
     {
+      id: "database-design-101",
       title: "Database Design 101",
       category: "Backend",
       difficulty: "Beginner" as const,
@@ -59,6 +65,7 @@ const Quests = () => {
       description: "Learn to design normalized databases with proper relationships and indexing strategies.",
     },
     {
+      id: "network-security-analysis",
       title: "Network Security Analysis",
       category: "Cybersecurity",
       difficulty: "Intermediate" as const,
@@ -67,6 +74,7 @@ const Quests = () => {
       description: "Analyze network traffic, identify vulnerabilities, and implement firewall rules.",
     },
     {
+      id: "build-chatbot",
       title: "Build a Chatbot",
       category: "AI/ML",
       difficulty: "Intermediate" as const,
@@ -75,6 +83,7 @@ const Quests = () => {
       description: "Create an AI-powered chatbot using natural language processing and machine learning.",
     },
     {
+      id: "typescript-fundamentals",
       title: "TypeScript Fundamentals",
       category: "Frontend",
       difficulty: "Beginner" as const,
@@ -83,6 +92,7 @@ const Quests = () => {
       description: "Learn TypeScript basics including types, interfaces, generics, and type guards.",
     },
     {
+      id: "docker-containerization",
       title: "Docker Containerization",
       category: "Backend",
       difficulty: "Advanced" as const,
@@ -91,6 +101,7 @@ const Quests = () => {
       description: "Master Docker by containerizing a full-stack application with multi-stage builds.",
     },
     {
+      id: "penetration-testing-basics",
       title: "Penetration Testing Basics",
       category: "Cybersecurity",
       difficulty: "Beginner" as const,
@@ -99,6 +110,7 @@ const Quests = () => {
       description: "Learn ethical hacking fundamentals and perform basic penetration testing exercises.",
     },
     {
+      id: "computer-vision-project",
       title: "Computer Vision Project",
       category: "AI/ML",
       difficulty: "Advanced" as const,

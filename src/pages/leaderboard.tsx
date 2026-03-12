@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import LeaderboardItem from "@/components/Leaderboarditem";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,21 +6,32 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Trophy } from "lucide-react";
 
 const Leaderboard = () => {
-  const globalLeaders = [
-    { rank: 1, name: "Alex Chen", level: 28, xp: 12500 },
-    { rank: 2, name: "Sarah Johnson", level: 26, xp: 11200 },
-    { rank: 3, name: "Mike Torres", level: 25, xp: 10800 },
-    { rank: 4, name: "Emma Wilson", level: 23, xp: 9500 },
-    { rank: 5, name: "David Kim", level: 22, xp: 9100 },
-    { rank: 6, name: "Lisa Anderson", level: 21, xp: 8700 },
-    { rank: 7, name: "Chris Martinez", level: 20, xp: 8200 },
-    { rank: 8, name: "Nina Patel", level: 19, xp: 7800 },
-  ];
+  const [globalLeaders, setGlobalLeaders] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/api/leaderboard');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        // Add rank to the data
+        const rankedData = data.map((user: any, index: number) => ({
+          ...user,
+          rank: index + 1
+        }));
+        setGlobalLeaders(rankedData);
+      } catch (error) {
+        console.error("Error fetching leaderboard:", error);
+      }
+    };
+
+    fetchLeaderboard();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-hero">
       <Navigation />
-      
+
       <main className="container mx-auto px-4 pt-24 pb-12">
         <div className="mb-8 text-center animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
@@ -65,8 +77,8 @@ const Leaderboard = () => {
               </CardHeader>
               <CardContent className="space-y-3">
                 {globalLeaders.slice(0, 5).map((leader) => (
-                  <LeaderboardItem 
-                    key={leader.rank} 
+                  <LeaderboardItem
+                    key={leader.rank}
                     {...leader}
                     xp={Math.floor(leader.xp * 0.3)}
                   />
@@ -85,8 +97,8 @@ const Leaderboard = () => {
               </CardHeader>
               <CardContent className="space-y-3">
                 {globalLeaders.map((leader) => (
-                  <LeaderboardItem 
-                    key={leader.rank} 
+                  <LeaderboardItem
+                    key={leader.rank}
                     {...leader}
                     xp={Math.floor(leader.xp * 0.6)}
                   />
